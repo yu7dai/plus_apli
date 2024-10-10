@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>足し算アプリ</title>
+    <title>計算アプリ</title>
 </head>
 <body>
-    <h1>簡単な足し算アプリ</h1>
+    <h1>簡単な計算アプリ</h1>
     
     <label for="num1">数字1:</label>
     <input type="number" id="num1" placeholder="1つ目の数字">
@@ -14,7 +14,11 @@
     <label for="num2">数字2:</label>
     <input type="number" id="num2" placeholder="2つ目の数字">
     
+    <!-- 足し算ボタン -->
     <button onclick="calculateSum()">足し算する</button>
+    
+    <!-- 掛け算ボタン -->
+    <button onclick="calculateProduct()">掛け算する</button>
     
     <h2>結果: <span id="result"></span></h2>
     
