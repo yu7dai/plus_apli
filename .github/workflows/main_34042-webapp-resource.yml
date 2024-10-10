@@ -1,0 +1,30 @@
+name: Azure WebApp CI/CD
+
+on:
+  push:
+    branches:
+      - main  # または 'master' ブランチにコミットされるとこのワークフローがトリガーされます。
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # リポジトリからソースコードをチェックアウトするステップ
+    - name: チェックアウトリポジトリ
+      uses: actions/checkout@v3
+
+    # Azureにログインするステップ
+    - name: Azureへのログイン
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    # Azure Web Appにデプロイするステップ
+    - name: Azure Web Appへのデプロイ
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: '34042-WebAPP-resource'  # ここに正しいWebApp名を指定
+        slot-name: 'production'  # スロットを使用しない場合はそのままでOK
+
+          
